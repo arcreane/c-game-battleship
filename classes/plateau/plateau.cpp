@@ -11,7 +11,7 @@ plateau::plateau(int col, int lig)
 	this->totalCases = col * lig;
 	this->ajoutCourant = true;
 
-	cases = new _case*[lig]; //création des cases de la grille
+	cases = new _case*[lig]; //crÃ©ation des cases de la grille
 
 	for (int i = 0; i < lig; i++) {
 		cases[i] = new _case[col];
