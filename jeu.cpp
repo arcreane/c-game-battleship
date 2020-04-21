@@ -509,7 +509,7 @@ bool jeu::verifVictoire(int numeroJoueur) {
 
 		for (int i = 0; i < this->regle->getNombrebateauxParJoueur(); i++) { //pour chaque bateau du joueur
 
-			if (!this->listeBateauxJoueur2[i]->estCoule()) //si un de ces bateau n'est pas coulé
+			if (!this->listeBateauxJoueur2[i]->estCoule()) //si un de ces bateau n'est pas coulÃ©
 				return false; //pas de victoire
 
 		}
@@ -537,8 +537,8 @@ bool jeu::calcTirIA(int &x, int &y, int X, int Y, int orientation) {
 
 	switch (orientation) {
 
-		/*calcul des coordonnées du prochain tir en fonction de l'orientation.
-		  puis vérification de la validité du tir qui suit en second*/
+		/*calcul des coordonnÃ©es du prochain tir en fonction de l'orientation.
+		  puis vÃ©rification de la validitÃ© du tir qui suit en second*/
 
 	case OUEST:
 		if ((!this->plateauH->getCase(Y, X - 1)->occupee) || (X - 2 < 0))
@@ -596,7 +596,7 @@ bool jeu::calcTirIA(int &x, int &y, int X, int Y, int orientation) {
 
 	}
 
-	return retour; //renvoi false si la prévision à 2 coups n'est pas valide
+	return retour; //renvoi false si la prÃ©vision Ã  2 coups n'est pas valide
 }
 
 bool jeu::verifIAOrientation(grille *g, int orgX, int orgY, int orientation) {
@@ -620,7 +620,7 @@ bool jeu::verifIAOrientation(grille *g, int orgX, int orgY, int orientation) {
 
 void jeu::demarrer(void) {
 
-	/*démarrage de la boucle de jeu*/
+	/*dÃ©marrage de la boucle de jeu*/
 
 	int x, y, prevX, prevY, prevOrientation = 0, orgX, orgY, orientation = 0;
 
@@ -629,7 +629,7 @@ void jeu::demarrer(void) {
 	this->termine = false;
 
 
-	while (!termine) {    //tant que la partie n'est pas terminée
+	while (!termine) {    //tant que la partie n'est pas terminÃ©e
 
 		/*Partie humaine du jeu*/
 
@@ -690,7 +690,7 @@ void jeu::demarrer(void) {
 
 		/*Partie IA du jeu*/
 
-		//IA réaliste
+		//IA rÃ©aliste
 
 		if (iaRealiste && !termine) {
 
