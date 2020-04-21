@@ -1,128 +1,90 @@
 #include "bateaux.h"
+#include "_case.h"
 
-void batiment::setCoule(bool c){
-
+void bateaux::setCoule(bool c) {
 	this->coule = c;
-
 }
 
-bool batiment::getStatus(void){
-
+bool bateaux::getStatus(void) {
 	return !this->coule;
-
 }
 
-bool batiment::estCoule(void){
-
-	for(int i = 0;i<this->numCases;i++){ //pour chaque case du bateau
-
-		if(!(this->listeCases[i])->touche) //si uen case n'est pas touchée
+bool bateaux::estCoule(void) {
+	for (int i = 0; i < this->numCases; i++) { //pour chaque case du bateau
+		if (!(this->listeCases[i])->touche) //si uen case n'est pas touchée
 			return false;  //on retourne false car le bateau n'est pas coulé
-
 	}
-
 	return true; //toutes les cases sont touchées
-
-
 }
 
-_case *batiment::getCaseTouchee(void){
-
-	for(int i = 0;i<this->numCases;i++){ //pour chaque case du bateau
-
-		if(this->listeCases[i]->touche) //si la case est touchée
+_case *bateaux::getCaseTouchee(void) {
+	for (int i = 0; i < this->numCases; i++) { //pour chaque case du bateau
+		if (this->listeCases[i]->touche) //si la case est touchée
 			return this->listeCases[i]; // on retourne directement le pointeur de la case
-
 	}
 	return NULL; //aucune case n'est touchée
 }
 
-bool batiment::estPlaceParJoueur(void){
-
+bool bateaux::estPlaceParJoueur(void) {
 	return !this->randomPlacement;
-
 }
 
 
-int batiment::getNumero(void){
-
+int bateaux::getNum(void) {
 	return this->numero;
-
 }
 
 
-int batiment::getNumeroJoueur(void){
-
+int bateaux::getNumJoueur(void) {
 	return this->numeroJoueur;
 }
 
-void batiment::setLigne(int ligne){
-
+void bateaux::setLig(int ligne) {
 	this->ligne = ligne;
-
 }
-void batiment::setColonne(int colonne){
-
+void bateaux::setCol(int colonne) {
 	this->colonne = colonne;
-
 }
 
-void batiment::setOrientation(int orientation){
-
+void batiment::setOrientation(int orientation) {
 	this->orientation = orientation;
-
 }
 
-int batiment::getLigne(void){
-
+int batiment::getLig(void) {
 	return this->ligne;
-
 }
 
-int batiment::getColonne(void){
-
+int batiment::getCol(void) {
 	return this->colonne;
-
 }
 
-int batiment::getOrientation(void){
-
+int batiment::getOrientation(void) {
 	return this->orientation;
-
 }
 
-int batiment::getNumCases(void){
-
+int batiment::getNumCases(void) {
 	return this->numCases;
-
 }
 
-_case **batiment::getCases(void){
-
-
+_case **batiment::getCases(void) {
 	return this->listeCases;
 }
 
 
 /*Fonctions des class filles*/
 
-
-char *porteAvion::getType(void){
-
+char *porteAvion::getType(void) {
 	return "Porte-Avion";
 }
 
-char *croiseur::getType(void){
-
+char *croiseur::getType(void) {
 	return "Croiseur";
 }
 
-char *sousMarin::getType(void){
-
+char *sousMarin::getType(void) {
 	return "Sous-Marin";
 }
 
-char *torpilleur::getType(void){
-
+char *torpilleur::getType(void) {
 	return "Torpilleur";
 }
